@@ -77,7 +77,7 @@ public class HuffmanFixedLength {
 		
 		public Node(int val, int weight) {
 			this.val = val;
-			this.weight = weight;
+			this.weight = 1+weight;
 			l = null;
 			r = null;
 		}

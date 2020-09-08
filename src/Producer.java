@@ -6,10 +6,10 @@ import java.io.InputStream;
 public class Producer extends InputStream{
 
 	private int reads = 0;
-	boolean[] file;
+	boolean[] f;
 	
 	public Producer() {
-		file = readFile();
+		f = readFile();
 	}
 	
 	boolean[] readFile() {	//reads the file from Compression_Files and puts it in byte array
@@ -33,10 +33,10 @@ public class Producer extends InputStream{
 	
 	@Override
 	public int read() throws IOException {	//gives back contents of the file
-		if(reads >= file.length) {
+		if(reads >= f.length) {
 			return -1;
 		} else {
-			return (file[reads++])?1:0;
+			return (f[reads++])?1:0;
 		}
 	}
 	
